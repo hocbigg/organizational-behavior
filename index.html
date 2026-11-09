@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Hocbigg - Organizational Behavior</title>
+  <meta name="description" content="Path to a free self-taught education in Organizational Behavior.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/organizational-behavior/">
+  <meta property="og:title" content="Hocbigg - Organizational Behavior">
+  <meta property="og:description" content="Path to a free self-taught education in Organizational Behavior.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/organizational-behavior/">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/organizational-behavior/">Organizational Behavior</a></li>
+      <li><a href="/organizational-behavior/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="https://github.com/hocbigg/organizational-behavior" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+<header class="page-header">
+  <img src="/images/logo.png" alt="Hocbigg logo">
+  <h1>Hocbigg - Organizational Behavior</h1>
+  <p class="page-subtitle">Path to a free self-taught education in Organizational Behavior.</p>
+  <p class="last-updated"><small>Last updated on: <time datetime="2026-10-08">2026-10-08</time></small></p>
+</header>
+<h2 id="introduction">Introduction</h2>
+<p>Organizational Behavior is the systematic study of how individuals and groups act within organizations and how organizational environments, in turn, influence human behavior. Drawing on social psychology, sociology, and management science, the discipline moves beyond common-sense intuition to explain why people engage, collaborate, miscommunicate, or resist authority at work. Studying OB provides the diagnostic tools needed to make sense of workplace dynamics—from the psychological roots of individual motivation to the political realities of leadership and systemic organizational change.</p>
+<p>This curriculum is built for independent, self-directed learners starting from scratch. It assumes no formal background in business administration, psychology, or quantitative research methods. The focus throughout is practical and conceptual: understanding the discipline's core models, empirical insights, and workplace applications rather than preparing to conduct peer-reviewed academic research.</p>
+<p>The curriculum is structured around the discipline's three classical levels of analysis:</p>
+<ul>
+<li><strong>Micro (Individual Level):</strong> Personality, perception, motivation, and decision-making heuristics.</li>
+<li><strong>Meso (Group Level):</strong> Group dynamics, power, leadership, conflict management, and negotiation.</li>
+<li><strong>Macro (Organizational Level):</strong> Organizational structure, corporate culture, and planned change.</li>
+</ul>
+<p>Begin with <em>Foundations of Organizational Behavior</em>, which introduces the field's origins and establishes this three-level framework. Following the sequence from micro to meso to macro provides the clearest pedagogical progression, as team dynamics build directly on individual behavioral traits, and macro-level culture rests on shared group norms. That said, once you complete the foundational unit, the remaining subjects can be studied modularly if you are addressing a specific workplace challenge or professional need.</p>
+<p>Across the subjects, the open-access textbook <em>Organizational Behavior</em> (OpenStax) serves as the primary spine, paired alongside university lecture archives, free audit-mode courses, and canonical texts. This core curriculum covers only the essential subjects that establish baseline literacy in the discipline. Once you have built this foundation, you can explore specialized tracks such as executive coaching, behavioral decision architecture, and diversity management in <a href="advanced_topics.html">Advanced Topics</a> or apply frameworks to practical organizational diagnostics in <a href="projects.html">Projects</a>.</p>
+<h2 id="curriculum">Curriculum</h2>
+<h3 id="foundations-of-organizational-behavior">Foundations of Organizational Behavior</h3>
+<p>This subject introduces the origins of organizational behavior, its multidisciplinary roots, and the three levels of analysis—individual, group, and organization system—that structure the field.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior (OpenStax)</a> - The primary open-access textbook spine for the curriculum; begin with Chapter 1 to establish the foundational models of management and workplace behavior.</p>
+<p><a href="https://www.youtube.com/playlist?list=PLbMVogVj5nJQYXoO3foSZ6CrU7aCCwTsb" target="_blank" rel="noopener noreferrer">Management - Organizational Behaviour (NPTEL/IIT Kharagpur)</a> - A complete 40-lecture video series that serves as an interchangeable alternative to the OpenStax textbook for visual and auditory learners.</p>
+<p><a href="https://ocw.mit.edu/courses/15-668-people-and-organizations-fall-2010" target="_blank" rel="noopener noreferrer">People and Organizations - MIT OCW 15.668</a> - A complementary university resource whose lecture notes provide an institutional and historical perspective on changing workplace systems to read alongside the textbook.</p>
+<h3 id="individual-differences-personality-perception-and-attitudes">Individual Differences: Personality, Perception, and Attitudes</h3>
+<p>This subject examines how personality traits, personal values, emotional intelligence, social perception, and workplace attitudes influence individual performance and employee engagement.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior, Chapters 2-5 (OpenStax)</a> - The foundational reading track covering personality traits, perceptual errors, learning reinforcement, diversity, and job attitudes.</p>
+<p><a href="https://ocw.mit.edu/courses/15-301-managerial-psychology-fall-2006" target="_blank" rel="noopener noreferrer">Managerial Psychology - MIT OCW 15.301</a> - A complementary slide-based reference from John Carroll and Li Tao that reinforces textbook concepts with applied behavioral science frameworks and decision exercises.</p>
+<h3 id="motivation">Motivation</h3>
+<p>This subject explores the core theories of human motivation, covering needs-based models, cognitive process theories, job characteristics design, and reward systems.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior, Chapters 7-8 (OpenStax)</a> - The primary theoretical baseline, covering classic needs hierarchies, expectancy theory, equity models, goal-setting, and organizational appraisal and reward systems.</p>
+<p><a href="https://books.google.com/books?isbn=9781594484803" target="_blank" rel="noopener noreferrer">Drive: The Surprising Truth About What Motivates Us (Daniel H. Pink)</a> - A complementary, practitioner-oriented text to read after the textbook chapters for an accessible exploration of intrinsic motivation, autonomy, and purpose.</p>
+<h3 id="judgment-and-decision-making">Judgment and Decision-Making</h3>
+<p>This subject covers how individuals and managers make decisions in organizations, focusing on rational choice models, bounded rationality, cognitive heuristics, and systematic biases.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior, Chapter 6 (OpenStax)</a> - The primary starting text for this unit, outlining rational decision steps, cognitive limitations, and managerial decision pitfalls in a work environment.</p>
+<p><a href="https://books.google.com/books?isbn=9780374275631" target="_blank" rel="noopener noreferrer">Thinking, Fast and Slow (Daniel Kahneman)</a> - An authoritative deep-dive that builds substantially on the textbook chapter by detailing dual-process cognitive architecture, prospect theory, and common heuristic biases.</p>
+<h3 id="group-dynamics-and-teamwork">Group Dynamics and Teamwork</h3>
+<p>This subject examines how groups develop, establish social norms, coordinate collective tasks, navigate cohesion and conflict, and optimize team effectiveness.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior, Chapters 9-10 (OpenStax)</a> - The foundational reading covering group formation stages, social loafing, groupthink, cohesion, and the structural design of work teams.</p>
+<p><a href="https://www.coursera.org/learn/leadership-collaboration" target="_blank" rel="noopener noreferrer">High Performance Collaboration: Leadership, Teamwork, and Negotiation (Northwestern University / Coursera)</a> - An applied video course that complements the textbook readings with practical frameworks for team charters, collaboration strategies, and peer accountability.</p>
+<h3 id="power-influence-and-leadership">Power, Influence, and Leadership</h3>
+<p>This subject investigates interpersonal power bases, organizational politics, influence tactics, and the major leadership frameworks from contingency models to transformational leadership.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior, Chapters 12-13 (OpenStax)</a> - The core text covering leadership behaviors, situational theories, sources of personal and structural power, and political behavior in organizations.</p>
+<p><a href="https://books.google.com/books?isbn=9781071957417" target="_blank" rel="noopener noreferrer">Leadership: Theory and Practice (Peter G. Northouse)</a> - An alternative, comprehensive textbook to use instead of or alongside OpenStax for a structured, comparative analysis of every major leadership model.</p>
+<h3 id="communication-conflict-and-negotiation">Communication, Conflict, and Negotiation</h3>
+<p>This subject covers organizational communication channels, barriers to effective information exchange, sources of workplace conflict, and strategies for mutual-gains negotiation.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior, Chapters 11 and 14 (OpenStax)</a> - The foundational reading establishing how workplace communication flows operate, common interpersonal barriers, conflict styles, and basic bargaining frameworks.</p>
+<p><a href="https://www.coursera.org/learn/negotiation-skills" target="_blank" rel="noopener noreferrer">Successful Negotiation: Essential Strategies and Skills (University of Michigan / Coursera)</a> - A structured video course that builds on the textbook theory by demonstrating practical negotiation planning, tactical execution, and dispute resolution.</p>
+<p><a href="https://books.google.com/books?isbn=9780143118756" target="_blank" rel="noopener noreferrer">Getting to Yes: Negotiating Agreement Without Giving In (Roger Fisher, William Ury, and Bruce Patton)</a> - A canonical practitioner text to read alongside the video course, introducing the Harvard Negotiation Project's interest-based bargaining method and BATNA framework.</p>
+<h3 id="organizational-structure-culture-and-change">Organizational Structure, Culture, and Change</h3>
+<p>This subject analyzes macro-level organizational dynamics, including organizational design, corporate culture diagnostic models, and frameworks for leading planned change.</p>
+<p><a href="https://openstax.org/details/books/organizational-behavior" target="_blank" rel="noopener noreferrer">Organizational Behavior, Chapters 15-16 (OpenStax)</a> - The primary text baseline, examining mechanistic versus organic structures, environmental fit, cultural artifacts, and change models.</p>
+<p><a href="https://www.coursera.org/learn/organizational-analysis" target="_blank" rel="noopener noreferrer">Organizational Analysis (Stanford Online / Coursera)</a> - An interactive video-lecture course that complements the readings by examining real-world organizational structures, cultural inertia, and institutional change processes.</p>
+<p><a href="https://books.google.com/books?isbn=9780470640579" target="_blank" rel="noopener noreferrer">Organizational Culture and Leadership (Edgar H. Schein)</a> - The seminal treatise on organizational culture; read after the introductory chapters to study Schein's three-level model of culture and methods of cultural diagnosis.</p>
+    </article>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <title>Advanced Topics</title>
+  <meta name="description" content="Advanced Topics curriculum by hocbigg.">
+  <meta name="author" content="hocbigg">
+
+  <link rel="canonical" href="https://hocbigg.github.io/organizational-behavior/advanced_topics.html">
+  <meta property="og:title" content="Advanced Topics">
+  <meta property="og:description" content="Advanced Topics curriculum by hocbigg.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hocbigg.github.io/organizational-behavior/advanced_topics.html">
+  <link rel="icon" href="https://hocbigg.github.io/images/favicon.ico">
+
+  <style>
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #595959;
+  --border: #e0e0e0;
+  --th-bg: #f6f8fa;
+  --code-bg: #f4f4f4;
+  --link: #0969da;
+  --focus-ring: #0969da;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --muted: #8b949e;
+    --border: #30363d;
+    --th-bg: #161b22;
+    --code-bg: #161b22;
+    --link: #58a6ff;
+    --focus-ring: #58a6ff;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 1.5rem auto;
+  max-width: 60rem;
+  padding: 0 1rem 3.5rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  font: 1.15rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Cú pháp hiện đại thay thế cho word-wrap */
+  overflow-wrap: break-word;
+}
+
+.site-header {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem 1.25rem;
+  font-size: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+nav a:hover, 
+nav a:focus-visible {
+  color: var(--fg);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+nav .nav-brand {
+  color: var(--fg);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.skip-link {
+  position: absolute;
+  transform: translateY(-150%);
+  left: 1rem;
+  background: var(--fg);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.15rem;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+p, ul, ol, blockquote, table {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:has(img) {
+  text-decoration: none;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header .page-subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.page-header img {
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  tab-size: 2;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.9rem;
+  border-radius: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--th-bg);
+  font-weight: 600;
+}
+
+blockquote {
+  margin-inline: 0;
+  border-left: 4px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  body {
+    max-width: none;
+    color: #000;
+    background: #fff;
+  }
+  .skip-link, nav {
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="https://hocbigg.github.io/" class="nav-brand">Hocbigg</a></li>
+      <li><a href="/organizational-behavior/">Organizational Behavior</a></li>
+      <li><a href="/organizational-behavior/advanced_topics.html">Advanced Topics</a></li>
+      <li><a href="https://github.com/hocbigg/organizational-behavior" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in new tab)</span></a></li>
+    </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article>
+
+<h2 id="advanced-topics-in-organizational-behavior">Advanced Topics in Organizational Behavior</h2>
+<p>This curriculum provides specialized subfields for learners who have completed foundational organizational behavior and wish to develop advanced practitioner or analytical expertise. You should select one or two tracks that align directly with your professional focus or research interests rather than attempting to complete all five.</p>
+<ul>
+<li><strong>Leadership Development &amp; Executive Coaching</strong> — Advanced frameworks for coaching executives, leading through adaptive complexity, providing developmental feedback, and managing leadership succession pipelines.</li>
+<li><strong>Organization Development &amp; Systemic Change</strong> — Methodologies for whole-system interventions, process consultation, strengths-based transformation, and evolutionary self-managing structures.</li>
+<li><strong>Team Effectiveness &amp; Psychological Safety</strong> — Advanced dynamics of team learning, interpersonal safety, error classification, and remote collaboration architecture.</li>
+<li><strong>Behavioral Insights &amp; Workplace Decision Architecture</strong> — The application of behavioral economics and choice architecture to organizational operations, managerial judgment, and noise reduction.</li>
+<li><strong>Workforce Diversity, Equity &amp; Inclusion</strong> — Evidence-based strategies and behavioral designs for leading diverse teams, mitigating systemic bias, and cultivating psychological inclusion.</li>
+</ul>
+<h2 id="leadership-development-executive-coaching">Leadership Development &amp; Executive Coaching</h2>
+<p>Advanced approaches to developing leaders, including coaching methodology, adaptive leadership for complex challenges, and succession planning.</p>
+<p>Adaptive Leadership: <a href="https://books.google.com/books?isbn=9781578514373" target="_blank" rel="noopener noreferrer">Leadership on the Line (Ronald A. Heifetz &amp; Marty Linsky)</a> - The definitive treatise on distinguishing technical problems from adaptive challenges and leading systemic change under political resistance.</p>
+<p>Executive Coaching &amp; Intentional Change: <a href="https://www.coursera.org/learn/leadership-coaching" target="_blank" rel="noopener noreferrer">Conversations That Inspire: Coaching Learning, Leadership and Change (Case Western Reserve University / Coursera)</a> - A free-to-audit video course exploring neuroscience-backed coaching with compassion and Intentional Change Theory.</p>
+<p>Coaching Methodology: <a href="https://books.google.com/books?isbn=9781857883039" target="_blank" rel="noopener noreferrer">Coaching for Performance (John Whitmore)</a> - The foundational handbook outlining the GROW (Goals, Reality, Options, Will) model and manager-as-coach competencies.</p>
+<p>Developmental Feedback: <a href="https://books.google.com/books?isbn=9781250235374" target="_blank" rel="noopener noreferrer">Radical Candor (Kim Scott)</a> - A practical framework for developmental dialogue that combines caring personally with challenging directly.</p>
+<p>Leadership Succession Architecture: <a href="https://books.google.com/books?isbn=9780470894569" target="_blank" rel="noopener noreferrer">The Leadership Pipeline: How to Build the Leadership-Powered Company (Ram Charan, Stephen Drotter, &amp; James Noel)</a> - A comprehensive model mapping the six structural passages leaders navigate and how enterprises design internal talent pipelines.</p>
+<h2 id="organization-development-systemic-change">Organization Development &amp; Systemic Change</h2>
+<p>Frameworks and methods for diagnosing organizational systems, facilitating human-centered change, and implementing next-stage organizational models.</p>
+<p>Change Management Execution: <a href="https://books.google.com/books?isbn=9781422186435" target="_blank" rel="noopener noreferrer">Leading Change (John P. Kotter)</a> - The standard eight-step operational process for overcoming organizational inertia and anchoring new cultural practices.</p>
+<p>Strengths-Based Transformation: <a href="https://www.coursera.org/learn/appreciative-inquiry" target="_blank" rel="noopener noreferrer">Leading Positive Change through Appreciative Inquiry (Case Western Reserve University / Coursera)</a> - A free-to-audit course on the 4-D cycle (Discovery, Dream, Design, Destiny) to drive large-scale generative change.</p>
+<p>Process Consultation: <a href="https://books.google.com/books?isbn=9780201345964" target="_blank" rel="noopener noreferrer">Process Consultation Revisited: Building the Helping Relationship (Edgar H. Schein)</a> - The cornerstone Organization Development text detailing how internal and external consultants diagnose dynamics and assist clients without imposing unilateral fixes.</p>
+<p>Next-Stage Organizational Models: <a href="https://books.google.com/books?isbn=9782960133516" target="_blank" rel="noopener noreferrer">Reinventing Organizations (Frédéric Laloux)</a> - An influential study examining self-managing, evolutionary Teal organizational structures and distributed authority models.</p>
+<h2 id="team-effectiveness-psychological-safety">Team Effectiveness &amp; Psychological Safety</h2>
+<p>The empirical science and practical design of high-performing teams, focusing on psychological safety, failure analysis, and distributed collaboration.</p>
+<p>Psychological Safety &amp; Voice: <a href="https://books.google.com/books?isbn=9781119477242" target="_blank" rel="noopener noreferrer">The Fearless Organization (Amy C. Edmondson)</a> - The seminal research synthesis demonstrating how interpersonal safety drives collective learning, problem identification, and innovation.</p>
+<p>Team Learning &amp; Failure Analysis: <a href="https://books.google.com/books?isbn=9781982195069" target="_blank" rel="noopener noreferrer">Right Kind of Wrong: The Science of Failing Well (Amy C. Edmondson)</a> - A rigorous taxonomy that differentiates preventable, complex, and intelligent failure to construct blame-free learning systems.</p>
+<p>Empirical Team Dynamics: <a href="https://rework.withgoogle.com/intl/en/guides/understand-team-effectiveness" target="_blank" rel="noopener noreferrer">Understand Team Effectiveness (Google re:Work)</a> - An open, practical guide to Google's Project Aristotle study, supplying diagnostic survey tools and concrete discussion protocols.</p>
+<p>Distributed &amp; Remote Team Dynamics: <a href="https://www.coursera.org/learn/remote-team-management" target="_blank" rel="noopener noreferrer">How to Manage a Remote Team (GitLab / Coursera)</a> - A comprehensive, free-to-audit course providing concrete methodologies for asynchronous communication, documentation culture, and managing distributed team health.</p>
+<h2 id="behavioral-insights-workplace-decision-architecture">Behavioral Insights &amp; Workplace Decision Architecture</h2>
+<p>Applying behavioral science and choice architecture to organizational operations, debiasing strategic choices, and reducing noise in workplace judgment.</p>
+<p>Behavioral Economics Foundations: <a href="https://ocw.mit.edu/courses/14-13-psychology-and-economics-spring-2020/" target="_blank" rel="noopener noreferrer">Psychology and Economics - MIT OCW 14.13</a> - A complete university lecture series with slides by Prof. Frank Schilbach covering heuristics, social preferences, and workplace choice architecture.</p>
+<p>Choice Architecture &amp; Nudging: <a href="https://books.google.com/books?isbn=9780143137009" target="_blank" rel="noopener noreferrer">Nudge: The Final Edition (Richard H. Thaler &amp; Cass R. Sunstein)</a> - The seminal foundation on using defaults, transparent feedback, and structured choices to influence organizational behaviors predictably.</p>
+<p>Applied Behavioral Science in Organizations: <a href="https://books.google.com/books?isbn=9781487507893" target="_blank" rel="noopener noreferrer">The Behaviorally Informed Organization (Dilip Soman &amp; Catherine Yeung, eds.)</a> - A focused collection of case studies and operational frameworks demonstrating how to embed behavioral nudges directly into organizational processes.</p>
+<p>Reducing Noise in Managerial Judgment: <a href="https://books.google.com/books?isbn=9780316451383" target="_blank" rel="noopener noreferrer">Noise: A Flaw in Human Judgment (Daniel Kahneman, Olivier Sibony, &amp; Cass R. Sunstein)</a> - An analytical breakdown of unwanted variability in human decisions—such as hiring, performance evaluations, and forecasting—paired with decision-hygiene protocols.</p>
+<h2 id="workforce-diversity-equity-inclusion">Workforce Diversity, Equity &amp; Inclusion</h2>
+<p>Evidence-based strategies and behavioral designs for leading diverse teams, mitigating systemic bias, and cultivating psychological inclusion.</p>
+<p>Evidence-Based DEI Leadership: <a href="https://www.coursera.org/learn/leading-diverse-teams-and-organizations" target="_blank" rel="noopener noreferrer">Leading Diverse Teams &amp; Organizations (University of Michigan / Coursera)</a> - A research-driven, free-to-audit course exploring demographic faultlines, implicit bias, and organizational interventions to foster high-performing diverse teams.</p>
+<p>Behavioral Design for Workplace Equity: <a href="https://books.google.com/books?isbn=9780674089037" target="_blank" rel="noopener noreferrer">What Works: Gender Equality by Design (Iris Bohnet)</a> - A research-based guide demonstrating how redesigning institutional procedures and evaluation systems removes bias more effectively than traditional awareness training.</p>
+<p>Balancing Uniqueness and Belonging: <a href="https://books.google.com/books?isbn=9780062947277" target="_blank" rel="noopener noreferrer">Inclusify: The Power of Uniqueness and Belonging to Build Innovative Teams (Stefanie K. Johnson)</a> - A practical framework showing leaders how to resolve the tension between an employee's desire to fit in and their need to retain individuality.</p>
+<p>Navigating Difficult Conversations About Identity: Skills for Difficult Conversations about Diversity (University of Michigan) - Practical video modules covering de-escalation techniques, active listening, and conflict mediation for emotionally charged workplace conversations about privilege and bias; search "Skills for Difficult Conversations about Diversity" on Michigan Online to access the free content.</p>
+    </article>
+  </main>
+
+</body>
+</html>
